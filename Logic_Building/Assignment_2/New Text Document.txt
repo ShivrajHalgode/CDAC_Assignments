@@ -1,0 +1,6 @@
+class UninitializedValues
+{
+	public static void main(String args[]){
+		
+}
+}
