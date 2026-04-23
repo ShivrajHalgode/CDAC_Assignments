@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact UI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.left {
+    width: 35%;
+    padding: 30px;
+    color: white;
+    background: linear-gradient(135deg, #4e73df, #36b9cc);
+    position: relative;
+}
+
+.left h2 {
+    margin-bottom: 20px;
+}
+
+.left p {
+    margin: 15px 0;
+}
+
+.social {
+    position: absolute;
+    bottom: 20px;
+}
+
+.social span {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.right {
+    width: 65%;
+    padding: 30px;
+}
+
+.right h2 {
+    margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+form textarea {
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4e73df;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #2e59d9;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+   
+    <div class="left">
+        <h2>Get in touch</h2>
+
+        <p><strong>Name</strong><br>HTML CSS Tutorials</p>
+        <p><strong>Email</strong><br>frontend@gmail.com</p>
+        <p><strong>Phone</strong><br>+91 8421655251</p>
+        <p><strong>Address</strong><br>123 Street, Solapur, India, 413216</p>
+
+        <div class="social">
+            <span><img src="/FooterFacebook.png"></span>
+            <span><img src="/FooterInsta.png"></span><span>
+                <img src="/FooterLinkedin.png"></span>
+        </div>
+    </div>
+
+    
+    <div class="right">
+        <h2>Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email ID" required>
+            <input type="text" placeholder="Website">
+            <input type="text" placeholder="Contact Number">
+            <textarea placeholder="Message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

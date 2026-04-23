@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .green {
+            color: #2e8b57;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .date-box input {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            margin: 2px;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            font-weight: bold;
+            border-bottom: 2px solid #2e8b57;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .full {
+            grid-column: span 2;
+        }
+
+        .gender {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .address-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature {
+            width: 40%;
+            text-align: center;
+        }
+
+        .line {
+            border-top: 1px solid black;
+            margin-top: 40px;
+        }
+
+        .bottom-text {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+        <div>
+            <h1>Registration <span class="green">Form</span></h1>
+            <p>This space is where you can share information on the section.</p>
+        </div>
+
+        <div>
+            <b>DATE OF REGISTRATION</b><br>
+            <div class="date-box">
+                <input> <input> /
+                <input> <input> /
+                <input> <input>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">PERSONAL INFORMATION</div>
+
+    <div class="form-grid">
+
+        <div class="full">
+            <label>Full Name:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Nickname:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Place of Birth:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Date of Birth:</label><br>
+            <input style="width:30px"> <input style="width:30px"> /
+            <input style="width:30px"> <input style="width:30px"> /
+            <input style="width:30px"> <input style="width:30px">
+        </div>
+
+        <div>
+            <label>Nationality:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Domicile:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Gender:</label>
+            <div class="gender">
+                <input type="checkbox"> Male
+                <input type="checkbox"> Female
+            </div>
+        </div>
+
+        <div>
+            <label>CP Domicile:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Marital Status:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Start Time:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Country:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Post Code:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>National ID No:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Phone:</label>
+            <input type="text">
+        </div>
+
+    </div>
+
+    <div class="section-title">ADDRESS</div>
+
+    <div class="address-grid">
+
+        <div class="full">
+            <label>Present Address:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>The City:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Present State:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Zip Code:</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>Student Trustee:</label>
+            <input type="text">
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div>
+            <b>ADDRESS SCHOOL :</b><br>
+            A: 123 Anywhere St., Any City<br>
+            P: +123-456-7890<br>
+            E: hello@site.com
+        </div>
+
+        <div class="signature">
+            <div class="line"></div>
+            Register Signature
+        </div>
+
+        <div class="signature">
+            <div class="line"></div>
+            Officer Signature
+        </div>
+
+    </div>
+
+    <div class="bottom-text">
+        <h3>THANK YOU <span class="green">FOR REGISTRATION</span></h3>
+        <p>Write your instructions here.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
