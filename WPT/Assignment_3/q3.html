@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Q3</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <select id="myList">
+        <option>Apple</option>
+        <option>Mango</option>
+        <option>Banana</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="removeItem()">Remove Selected</button>
+</div>
+
+<script>
+function removeItem() {
+    let list = document.getElementById("myList");
+    list.remove(list.selectedIndex);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Q2</title>
+    <style>
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form onsubmit="displayData(event)">
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name: <input type="text" id="lname"><br><br>
+        Contact: <input type="text" id="contact"><br><br>
+        Email: <input type="email" id="email"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Output:</h3>
+    <p id="output"></p>
+</div>
+
+<script>
+function displayData(event) {
+    event.preventDefault(); // stop page refresh
+
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    let contact = document.getElementById("contact").value;
+    let email = document.getElementById("email").value;
+
+    document.getElementById("output").innerHTML =
+        "Name: " + fname + " " + lname + "<br>" +
+        "Contact: " + contact + "<br>" +
+        "Email: " + email;
+}
+</script>
+
+</body>
+</html>
