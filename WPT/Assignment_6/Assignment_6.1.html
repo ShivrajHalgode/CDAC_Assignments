@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Assignment</title>
+</head>
+
+<body>
+
+<script>
+
+/* 1. Shopping Cart using let, const, var */
+const taxRate = 0.1;
+let totalPrice = 0;
+var items = [100, 200, 300];
+
+for (let i = 0; i < items.length; i++) {
+    totalPrice += items[i];
+}
+totalPrice += totalPrice * taxRate;
+console.log("Q1 Total Price:", totalPrice);
+
+
+/* 2. Rectangle Area */
+function areaRect(l, w) {
+    return l * w;
+}
+
+const areaArrow = (l, w) => l * w;
+
+console.log("Q2 Regular:", areaRect(5, 4));
+console.log("Q2 Arrow:", areaArrow(5, 4));
+
+
+/* 3. Book Object */
+let book = {
+    title: "JavaScript Basics",
+    author: "ABC",
+    year: 2020,
+    display: function() {
+        console.log("Q3:", this.title, this.author, this.year);
+    }
+};
+book.display();
+
+
+/* 4. Object Destructuring */
+let car = { brand: "BMW", model: "X5", year: 2022 };
+let { brand, model, year } = car;
+console.log("Q4:", brand, model, year);
+
+
+/* 5. Array Destructuring */
+let numbers = [10, 20, 30];
+let [a, b] = numbers;
+console.log("Q5:", a, b);
+
+
+/* 6. map() */
+let names = ["Ram", "Shyam", "Geeta"];
+let lengths = names.map(name => name.length);
+console.log("Q6:", lengths);
+
+
+/* 7. filter() */
+let nums = [1,2,3,4,5,6];
+let even = nums.filter(n => n % 2 === 0);
+console.log("Q7:", even);
+
+
+/* 8. reduce() */
+let prices = [100, 200, 300];
+let total = prices.reduce((sum, p) => sum + p, 0);
+console.log("Q8:", total);
+
+
+/* 9. Rest Operator */
+function sum(...args) {
+    return args.reduce((a,b) => a + b, 0);
+}
+console.log("Q9:", sum(1,2,3,4));
+
+
+/* 10. Spread Operator */
+let fruits1 = ["Apple", "Banana"];
+let fruits2 = ["Mango", "Orange"];
+let allFruits = [...fruits1, ...fruits2];
+console.log("Q10:", allFruits);
+
+
+/* 11. Callback after delay */
+function delay(callback) {
+    setTimeout(callback, 2000);
+}
+delay(() => console.log("Q11: Callback executed after delay"));
+
+
+/* 12. Promise */
+let promise = new Promise((resolve) => {
+    setTimeout(() => resolve("Q12: Promise Resolved"), 3000);
+});
+promise.then(msg => console.log(msg));
+
+
+/* 13. Closure */
+function outer() {
+    let count = 0;
+    return function() {
+        count++;
+        console.log("Q13:", count);
+    };
+}
+let counter = outer();
+counter();
+counter();
+
+
+/* 14. Async/Await */
+async function fetchData() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let data = await response.json();
+    console.log("Q14:", data);
+}
+fetchData();
+
+
+/* 15. filter + map + reduce */
+function processArray(arr) {
+    return arr
+        .filter(n => n % 2 === 0)
+        .map(n => n * 2)
+        .reduce((sum, n) => sum + n, 0);
+}
+
+console.log("Q15:", processArray([1,2,3,4,5]));
+
+</script>
+
+</body>
+</html>

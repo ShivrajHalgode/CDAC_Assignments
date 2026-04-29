@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Budget Tracker</title>
+</head>
+
+<body>
+
+<h2>Personal Budget Tracker</h2>
+
+<input type="text" id="desc" placeholder="Description">
+<input type="number" id="amount" placeholder="Amount">
+<input type="date" id="date">
+
+<button onclick="addExpenseUI()">Add Expense</button>
+<button onclick="showExpenses()">View Expenses</button>
+<button onclick="showTotal()">Total Expense</button>
+
+<pre id="output"></pre>
+
+<script>
+
+/* ================= VARIABLES ================= */
+var expenses = [];
+let totalExpense = 0;
+const taxRate = 0; // just to use const
+
+/* ================= ADD EXPENSE ================= */
+function addExpense(...newExpenses) {
+
+    // Spread operator
+    expenses = [...expenses, ...newExpenses];
+
+    // Callback
+    showMessage(() => console.log("Expense Added Successfully"));
+}
+
+/* ================= CALLBACK ================= */
+function showMessage(callback) {
+    callback();
+}
+
+/* ================= DISPLAY ================= */
+function displayExpenses() {
+
+    // map + destructuring
+    let result = expenses.map(({description, amount, date}, index) => {
+        return `${index+1}. ${description} - ₹${amount} - ${date}`;
+    });
+
+    document.getElementById("output").innerText = result.join("\n");
+}
+
+/* ================= FILTER ================= */
+function filterExpenses() {
+    let filtered = expenses.filter(e => e.amount > 20);
+    console.log("Filtered (>20):", filtered);
+}
+
+/* ================= REDUCE ================= */
+function calculateTotal() {
+    totalExpense = expenses.reduce((sum, e) => sum + e.amount, 0);
+    return totalExpense;
+}
+
+/* ================= CLOSURE ================= */
+function createTotalTracker() {
+    let total = 0;
+    return function(amount) {
+        total += amount;
+        return total;
+    }
+}
+let updateTotal = createTotalTracker();
+
+/* ================= UI FUNCTIONS ================= */
+function addExpenseUI() {
+    let description = document.getElementById("desc").value;
+    let amount = Number(document.getElementById("amount").value);
+    let date = document.getElementById("date").value;
+
+    let expense = { description, amount, date };
+
+    addExpense(expense);
+
+    updateTotal(amount);
+
+    alert("Expense Added");
+}
+
+function showExpenses() {
+    displayExpenses();
+}
+
+function showTotal() {
+    let total = calculateTotal();
+    document.getElementById("output").innerText = "Total: ₹" + total;
+}
+
+/* ================= PROMISE ================= */
+function fetchExpenses() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve([
+                { description: "Food", amount: 50, date: "2024-01-01" },
+                { description: "Travel", amount: 100, date: "2024-01-02" }
+            ]);
+        }, 1000);
+    });
+}
+
+/* ================= ASYNC/AWAIT ================= */
+async function loadExpenses() {
+    let data = await fetchExpenses();
+    expenses = [...data]; // spread
+    displayExpenses();
+}
+
+loadExpenses();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q5</title>
+</head>
+<body>
+    <script>
+              function fetchData(callback) {
+            console.log("Fetching data...");
+            setTimeout(() => {
+                const data = { id: 1, name: "Shivraj" };
+                callback(null, data);
+            }, 2000);
+        }
+        function processData(data, callback) {
+            console.log("Processing data...");
+            setTimeout(() => {
+                const processed = {
+                    ...data,
+                    name: data.name.toUpperCase()
+                };
+                callback(processed);
+            }, 1000);
+        }
+        fetchData((err, data) => {
+            if (err) {
+                console.error(err);
+            } else {
+                processData(data, (result) => {
+                    console.log("Processed Result:", result);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
